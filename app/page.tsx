@@ -54,7 +54,6 @@ import {
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -65,7 +64,7 @@ import { AlertCircle, Check, Terminal } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <Header />
 
       <main className="container mx-auto p-6">
