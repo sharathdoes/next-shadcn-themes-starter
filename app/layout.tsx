@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import {ThemeProvider} from "@/components/theme-provider";
+import { ActiveThemeProvider } from "@/components/themes/active-theme";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { fontVariables } from "@/components/themes/font.config"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,15 +13,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className={fontVariables}>
+      <body className="antialiased">
+        {/* 1️⃣ next-themes (dark / system) */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* 2️⃣ your theme system (claude, vercel, mono…) */}
+          <ActiveThemeProvider>{children}</ActiveThemeProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
