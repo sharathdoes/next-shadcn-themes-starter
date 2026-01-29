@@ -37,18 +37,18 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          "bg-background overflow-hidden overscroll-none font-sans antialiased",
+          "bg-background  font-sans antialiased",
           fontVariables,
         )}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="claude"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
           enableColorScheme
         >
-          <Providers activeThemeValue="claude">{children}</Providers>
+          <Providers activeThemeValue="mono">{children}</Providers>
         </ThemeProvider>
       </body>
     </html>

@@ -27,6 +27,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Accordion,
   AccordionContent,
@@ -54,6 +55,7 @@ import {
 import {
   Table,
   TableBody,
+  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -64,10 +66,19 @@ import { AlertCircle, Check, Terminal } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <Header />
 
-      <main className="container mx-auto p-6">
+      <main className="container mx-auto p-6 pb-20">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold tracking-tight mb-2">
+            Component Showcase
+          </h1>
+          <p className="text-muted-foreground">
+            Test your themes across all components
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Payment Form Card */}
           <Card>
@@ -661,6 +672,6 @@ export default function Home() {
           </Card>
         </div>
       </main>
-    </div>
+    </>
   );
 }
