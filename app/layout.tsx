@@ -48,7 +48,7 @@ export default function RootLayout({
           disableTransitionOnChange
           enableColorScheme
         >
-          <Providers activeThemeValue="mono">{children}</Providers>
+          <Providers >{children}</Providers>
         </ThemeProvider>
       </body>
     </html>
